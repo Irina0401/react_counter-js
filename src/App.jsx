@@ -12,14 +12,23 @@ export const App = () => {
     setCount(p => p + 100);
   };
 
-
   // DON'T change the code below
   const increase = () => {
-    if (count % 5 === 0) {
-      add100();
-    }
+    setCount(c => {
+     const nextVal = c + 1
 
-    addOne();
+     if (nextVal % 5 === 0) {
+      return nextVal + 100
+    } else {
+      return nextVal;
+    }
+    })
+    
+    // if (count % 5 === 0) {
+    //   add100();
+    // }
+
+    // addOne();
   };
 
   return (
